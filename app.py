@@ -4,9 +4,9 @@ from datetime import datetime
 
 def get_reddit_videos(subreddit_name, limit=50):
     reddit = praw.Reddit(
-        client_id = "Your_Client_Id",
-        client_secret = "Your_Client_Secret",
-        user_agent = "Your_User_Agent"
+        client_id=st.secrets["REDDIT_CLIENT_ID"],
+        client_secret=st.secrets["REDDIT_CLIENT_SECRET"],
+        user_agent=st.secrets["REDDIT_USER_AGENT"]
     )
     subreddit = reddit.subreddit(subreddit_name)
     videos = []
